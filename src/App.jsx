@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Lista from "./Lista"
 import "./App.css"
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
       <ol>
         {
           criptos.map( ({id, name, priceUsd}) => (
-            <li key={id}> Nombre: {name} , Precio: {priceUsd}</li>
+            <Lista key={id} name={name} priceUsd={priceUsd}/>
           ))
         }
       </ol>
