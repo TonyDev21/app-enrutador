@@ -1,40 +1,13 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
-import Lista from "./Lista"
-import "./App.css"
+import { Outlet } from 'react-router-dom'
+import Menu from './Components/menu/Menu.jsx'
 
 const App = () => {
-
-  const VITE_API_URL = import.meta.env.VITE_API_URL;
-
-  const [ criptos, setCriptos] = useState();
-
-  useEffect(()=>{
-   // fetch(`${VITE_API_URL}assets`)
-    axios.get(`${VITE_API_URL}assets`)
-     //.then( (respuesta) => respuesta.json())
-      .then( (data) => {  
-        setCriptos(data.data.data)
-      })
-      .catch( () => {
-        console.error("La peticion fallo")
-      })
-  },[criptos,VITE_API_URL])
-
-  if(!criptos) return (<span>Cargando...</span>)
-  
-  return (
-    <>
-      <h1>Lista de Criptomonedas</h1>
-      <ol>
-        {
-          criptos.map( ({id, name, priceUsd}) => (
-            <Lista key={id} name={name} priceUsd={priceUsd}/>
-          ))
-        }
-      </ol>
-    </>
-  )
+    return (
+        <>
+            <Menu/>
+            <Outlet/>
+        </>
+    )
 }
 
 export default App
