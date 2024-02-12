@@ -1,0 +1,36 @@
+.perfil-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+   
+    box-shadow: 1px 1px 7px white;
+    
+}
+
+.perfil-title,.perfil-parrafos{
+    align-self: flex-start;
+    padding-left: 4.5rem;
+    margin-bottom: 2rem;
+    color: skyblue;
+}
+
+.perfil-title{
+    font-size: 1.7rem;
+}
+
+.perfil-parrafos{
+    font-size: 1.1rem;
+}
+
+.perfil-parrafos span{ 
+    color: #fff;
+}
+
+.perfil-img img{
+    border-radius: 50%;
+    border: 3px solid yellow;
+}
